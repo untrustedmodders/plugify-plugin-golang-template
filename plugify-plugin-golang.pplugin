@@ -1,21 +1,16 @@
 {
 	"$schema": "https://raw.githubusercontent.com/untrustedmodders/plugify/refs/heads/main/schemas/plugin.schema.json",
-	"fileVersion": 1,
 	"version": "0.1.0",
-	"friendlyName": "Go Sample Plugin",
+	"name": "golang_plugin",
 	"description": "An example of a Go plugin. This can be used as a starting point when creating your own plugin.",
-	"createdBy": "untrustedmodders",
-	"createdByURL": "https://github.com/untrustedmodders/",
-	"docsURL": "https://github.com/untrustedmodders/plugify-plugin-golang-template",
-	"downloadURL": "",
-	"updateURL": "",
-	"entryPoint": "plugify-plugin-golang",
-	"supportedPlatforms": [],
-	"languageModule": {
-		"name": "golang"
-	},
+	"author": "untrustedmodders",
+	"website": "https://github.com/untrustedmodders/",
+	"license": "MIT",
+	"entry": "plugify-plugin-golang",
+	"platforms": [],
+	"language": "golang",
 	"dependencies": [],
-	"exportedMethods": [
+	"methods": [
 		{
 			"name": "MakePrint",
 			"funcName": "__MakePrint",
