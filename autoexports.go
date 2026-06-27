@@ -11,5 +11,5 @@ import (
 
 //export __MakePrint
 func __MakePrint(count int32, message *C.String) {
-	MakePrint(count, plugify.GetStringData((*plugify.PlgString)(unsafe.Pointer(message))))
+	MakePrint(count, plugify.GetStringData[string]((*plugify.PlgString)(unsafe.Pointer(message))))
 }

@@ -1,31 +1,31 @@
 package main
 
-import "C"
 import (
 	"fmt"
+	
 	"github.com/untrustedmodders/go-plugify"
 )
 
+func onPluginStart() error {
+	fmt.Println("Go: OnPluginStart")
+	return nil
+}
+
+/*func onPluginUpdate(dt float32) error {
+	fmt.Println("Go: OnPluginUpdate")
+	return nil
+}*/
+
+func onPluginEnd() error {
+	fmt.Println("Go: OnPluginEnd")
+	return nil
+}
+
 func init() {
-	plugify.OnPluginStart(func() error {
-		fmt.Println("Go: OnPluginStart")
-		return nil
-	})
-
-	/*plugify.OnPluginUpdate(func(dt float32) error {
-		fmt.Println("Go: OnPluginUpdate")
-		return nil
-	})*/
-
-	plugify.OnPluginEnd(func() error {
-		fmt.Println("Go: OnPluginEnd")
-		return nil
-	})
+	plugin = plugify.NewPlugin("golang_plugin", onPluginStart, nil, onPluginEnd)
 }
 
-func main() {
-}
-
+// plugify:export MakePrint
 func MakePrint(count int32, message string) {
 	for i := int32(0); i < count; i++ {
 		fmt.Println(message)
