@@ -22,7 +22,7 @@ func onPluginEnd() error {
 }
 
 func init() {
-	plugin = plugify.NewPlugin("golang_plugin", onPluginStart, nil, onPluginEnd)
+	plugify.NewPlugin("golang_plugin", onPluginStart, nil, onPluginEnd)
 }
 
 // plugify:export MakePrint
