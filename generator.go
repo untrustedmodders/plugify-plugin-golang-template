@@ -1,4 +1,3 @@
-//go:generate go run generator.go -package=main -output=.
 //go:build ignore
 
 package main

@@ -1,13 +1,17 @@
 package main
 
-// #include "autoexports.h"
+//#include "autoexports.h"
 import "C"
 import (
-	"github.com/untrustedmodders/go-plugify"
+	"reflect"
 	"unsafe"
+
+	"github.com/untrustedmodders/go-plugify"
 )
 
-// Exported methods
+var _ = reflect.TypeOf(0)
+var _ = unsafe.Sizeof(0)
+var _ = plugify.ApiVersion
 
 //export __MakePrint
 func __MakePrint(count int32, message *C.String) {

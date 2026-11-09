@@ -1,3 +1,5 @@
+//go:generate go run generator.go -output plugify-plugin-golang.pplugin -name golang_plugin -version 0.1.0 -entry plugify-plugin-golang -author untrustedmodders -website https://github.com/untrustedmodders/ -license MIT -description "An example of a Go plugin. This can be used as a starting point when creating your own plugin."
+
 package main
 
 import (
@@ -24,6 +26,9 @@ func onPluginEnd() error {
 func init() {
 	plugify.NewPlugin("golang_plugin", onPluginStart, nil, onPluginEnd)
 }
+
+// required by -buildmode=c-shared, never called
+func main() {}
 
 // plugify:export MakePrint
 func MakePrint(count int32, message string) {
